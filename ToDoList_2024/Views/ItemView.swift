@@ -8,11 +8,17 @@
 import SwiftUI
 
 struct ItemView: View {
+    var toDoListItem : String
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack{
+            Button(action: {}){
+                Image(systemName: "checkmark.circle")
+            }
+            Text(toDoListItem)
+        }
     }
 }
 
 #Preview {
-    ItemView()
+    ItemView(toDoListItem: "Study for Chemistry quiz")
 }
