@@ -23,15 +23,17 @@ struct LandingView: View {
             
             VStack{
                 List{
-                    Text("Study for Chemistry quiz")
-                    Text("Finish Computer Science assignment")
-                    Text("Go for a run around campus")
+                    ItemView(toDoListItem: "Study for Chemistry quiz", checkmark: "circle")
+                    ItemView(toDoListItem: "Finish Computer Science assignment", checkmark: "checkmark.circle")
+                    ItemView(toDoListItem: "Go for a run around campus", checkmark: "circle")
                 }
                 .searchable(text: $searchText)
                 
                 HStack{
                     TextField("Enter a to-do item", text: $newItemDescription)
-                    Text("ADD")
+                    Button(action: {}) {
+                        Text("ADD")
+                    }
                 }
                 .padding(20)
             }

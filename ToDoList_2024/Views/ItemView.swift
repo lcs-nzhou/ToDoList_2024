@@ -9,16 +9,18 @@ import SwiftUI
 
 struct ItemView: View {
     var toDoListItem : String
+    var checkmark : String
     var body: some View {
         HStack{
             Button(action: {}){
-                Image(systemName: "checkmark.circle")
+                Image(systemName: checkmark)
             }
+            .tint(.blue)
             Text(toDoListItem)
         }
     }
 }
 
 #Preview {
-    ItemView(toDoListItem: "Study for Chemistry quiz")
+    ItemView(toDoListItem: "Study for Chemistry quiz", checkmark: "checkmark.circle")
 }

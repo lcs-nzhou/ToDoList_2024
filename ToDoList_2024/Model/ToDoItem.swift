@@ -6,3 +6,11 @@
 //
 
 import Foundation
+import SwiftUI
+
+struct TradingCard: Identifiable {
+    let id = UUID()
+    
+    var itemDetail : String
+    var checkMark : String
+}
