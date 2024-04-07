@@ -23,9 +23,9 @@ struct LandingView: View {
             
             VStack{
                 List{
-                    ItemView(toDoListItem: "Study for Chemistry quiz", checkmark: "circle")
-                    ItemView(toDoListItem: "Finish Computer Science assignment", checkmark: "checkmark.circle")
-                    ItemView(toDoListItem: "Go for a run around campus", checkmark: "circle")
+                    ItemView(item: item1)
+                    ItemView(item: item2)
+                    ItemView(item: item3)
                 }
                 .searchable(text: $searchText)
                 
