@@ -32,15 +32,29 @@ struct LandingView: View {
                 
                 HStack{
                     TextField("Enter a to-do item", text: $newItemDescription)
-                    Button(action: {}) {
+                    Button(action: {
+                        createToDo(withTitle: newItemDescription)
+                    }, label: {
                         Text("ADD")
-                    }
+                    })
+                    .disabled(newItemDescription.isEmpty == true)
                 }
                 .padding(20)
             }
             .navigationTitle("To do")
         }
     }
+    
+    //MARK: Functions
+    func createToDo (withTitle title: String) {
+        
+        //Create the new to-do item instance
+        let todo = ToDoItem(itemDetail: title, completed: false)
+        
+        //Append to the array
+        todos.append(todo)
+    }
+    
 }
 
 #Preview {
