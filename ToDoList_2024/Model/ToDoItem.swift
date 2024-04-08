@@ -12,10 +12,10 @@ struct ToDoItem: Identifiable {
     let id = UUID()
     
     var itemDetail : String
-    var checkMark : String
+    var completed : Bool
 }
-let item1 = ToDoItem(itemDetail: "Study for Chemistry quiz", checkMark: "circle")
+let item1 = ToDoItem(itemDetail: "Study for Chemistry quiz", completed: false)
 
-let item2 = ToDoItem(itemDetail: "Finish Computer Science assignment", checkMark: "checkmark.circle")
+let item2 = ToDoItem(itemDetail: "Finish Computer Science assignment", completed: true)
 
-let item3 = ToDoItem(itemDetail: "Go for a run around campus", checkMark: "circle")
+let item3 = ToDoItem(itemDetail: "Go for a run around campus", completed: false)

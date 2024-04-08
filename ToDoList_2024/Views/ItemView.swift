@@ -8,15 +8,19 @@
 import SwiftUI
 
 struct ItemView: View {
+    
     var item : ToDoItem
+    
     var body: some View {
-        HStack{
-            Button(action: {}){
-                Image(systemName: item.checkMark)
-            }
-            .tint(.blue)
+        Label(title: {
             Text(item.itemDetail)
-        }
+        }, icon: {
+            if item.completed == true{
+                Image(systemName: "checkmark.circle")
+            } else {
+                Image(systemName: "circle")
+            }
+        })
     }
 }
 
