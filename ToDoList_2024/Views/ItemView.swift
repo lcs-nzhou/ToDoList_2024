@@ -13,7 +13,7 @@ struct ItemView: View {
     
     var body: some View {
         Label(title: {
-            Text(item.itemDetail)
+            TextField("Enter a to-do item", text: $item.itemDetail, axis: .vertical)
         }, icon: {
             Image(systemName: item.completed == true ? "checkmark.circle" : "circle")
             .onTapGesture {
