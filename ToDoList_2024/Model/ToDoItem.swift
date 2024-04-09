@@ -5,14 +5,17 @@
 //  Created by Shuyu Zhou on 2024-04-06.
 //
 
-import Foundation
-import SwiftUI
+import SwiftData
 
-struct ToDoItem: Identifiable {
-    let id = UUID()
-    
+@Model
+class ToDoItem: Identifiable {
     var itemDetail : String
     var completed : Bool
+    
+    init(itemDetail: String, completed: Bool) {
+        self.itemDetail = itemDetail
+        self.completed = completed
+    }
 }
 let item1 = ToDoItem(itemDetail: "Study for Chemistry quiz", completed: false)
 
