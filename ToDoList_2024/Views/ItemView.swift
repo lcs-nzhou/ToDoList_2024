@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ItemView: View {
     
-    @Binding var item : ToDoItem
+    @Bindable var item : ToDoItem
     
     var body: some View {
         Label(title: {
