@@ -9,21 +9,20 @@ import SwiftUI
 
 struct ItemView: View {
     
-    var item : ToDoItem
+    @Binding var item : ToDoItem
     
     var body: some View {
         Label(title: {
             Text(item.itemDetail)
         }, icon: {
-            if item.completed == true{
-                Image(systemName: "checkmark.circle")
-            } else {
-                Image(systemName: "circle")
-            }
+            Image(systemName: item.completed == true ? "checkmark.circle" : "circle")
+            .onTapGesture {
+                    item.completed.toggle()
+                }
         })
     }
 }
 
 #Preview {
-    ItemView(item: item1)
+    ItemView(item: Binding.constant(item1))
 }
