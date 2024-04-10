@@ -17,10 +17,28 @@ class ToDoItem: Identifiable {
         self.completed = completed
     }
 }
-let item1 = ToDoItem(itemDetail: "Study for Chemistry quiz", completed: false)
 
-let item2 = ToDoItem(itemDetail: "Finish Computer Science assignment", completed: true)
+extension ToDoItem {
+    
+    @MainActor
+    static var preview: ModelContainer {
+        
+        let container = try! ModelContainer(
+            for: ToDoItem.self,
+            configurations: ModelConfiguration(isStoredInMemoryOnly: true)
+        )
+        
+        // Add mock data
+        container.mainContext.insert(
+            ToDoItem(itemDetail: "Go for a walk", completed: false)
+        )
+        container.mainContext.insert(
+            ToDoItem(itemDetail: "Have a nap", completed: true)
+        )
+        container.mainContext.insert(
+            ToDoItem(itemDetail: "Call mom", completed: false)
+        )
 
-let item3 = ToDoItem(itemDetail: "Go for a run around campus", completed: false)
-
-let exampleItems = [item1, item2, item3]
+        return container
+    }
+}
