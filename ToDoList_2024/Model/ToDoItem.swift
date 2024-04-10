@@ -42,3 +42,10 @@ extension ToDoItem {
         return container
     }
 }
+
+extension ToDoItem {
+    
+    static let someItem = ToDoItem(itemDetail: "Read a book", completed: true)
+    static let anotherItem = ToDoItem(itemDetail: "Make a sandwich", completed: false)
+
+}
